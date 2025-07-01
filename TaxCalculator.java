@@ -39,12 +39,10 @@ public final class TaxCalculator {
                 tax += (income - prevCap) * TAX_RATES[i];
                 return tax;
             } else {
-                //Over 10% but under 37%
                 tax += (cap - prevCap) * TAX_RATES[i];
                 prevCap = cap;
             }
         }
-        //Over 37%
         tax += (income - prevCap) * TAX_RATES[TAX_RATES.length - 1];
         return tax;
     }
